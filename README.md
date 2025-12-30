@@ -46,12 +46,11 @@ $$x_k = K_k \cdot z_k + (1 - K_k) \cdot x_{k-1}$$
 
 | Origin | Mapped & Filter |
 | -------- | -------- | 
-| ![kalman](image/kalman.png) | ![kalman2](image/kalman2.png) | 
-
-
+| ![kalman](image/kalman.png) | ![kalman2](image/kalman2.png) |
 
 ### 4. Digital Twin & Safety (PyBullet)
 The **UR5/TM5** model in PyBullet acts as a safety buffer. It verifies movement within the robot's reach to prevent self-collision or singularities before physical execution.
+
 ![pybullet](image/pybullet.png)
 
 ---
