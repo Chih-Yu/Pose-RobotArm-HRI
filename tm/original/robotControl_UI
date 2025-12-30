@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'robotControl.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(568, 581)
+        self.pushButton_Init_robot = QtWidgets.QPushButton(Form)
+        self.pushButton_Init_robot.setGeometry(QtCore.QRect(20, 30, 101, 23))
+        self.pushButton_Init_robot.setObjectName("pushButton_Init_robot")
+        self.pushButton_setPos = QtWidgets.QPushButton(Form)
+        self.pushButton_setPos.setGeometry(QtCore.QRect(20, 70, 101, 23))
+        self.pushButton_setPos.setObjectName("pushButton_setPos")
+        self.label_xPos = QtWidgets.QLabel(Form)
+        self.label_xPos.setGeometry(QtCore.QRect(20, 100, 21, 16))
+        self.label_xPos.setObjectName("label_xPos")
+        self.label_yPos = QtWidgets.QLabel(Form)
+        self.label_yPos.setGeometry(QtCore.QRect(20, 130, 21, 16))
+        self.label_yPos.setObjectName("label_yPos")
+        self.label_zPos = QtWidgets.QLabel(Form)
+        self.label_zPos.setGeometry(QtCore.QRect(20, 160, 21, 16))
+        self.label_zPos.setObjectName("label_zPos")
+        self.textEdit_x = QtWidgets.QTextEdit(Form)
+        self.textEdit_x.setGeometry(QtCore.QRect(30, 100, 31, 20))
+        self.textEdit_x.setObjectName("textEdit_x")
+        self.textEdit_y = QtWidgets.QTextEdit(Form)
+        self.textEdit_y.setGeometry(QtCore.QRect(30, 130, 31, 20))
+        self.textEdit_y.setObjectName("textEdit_y")
+        self.textEdit_z = QtWidgets.QTextEdit(Form)
+        self.textEdit_z.setGeometry(QtCore.QRect(30, 160, 31, 20))
+        self.textEdit_z.setObjectName("textEdit_z")
+        self.textEdit_u = QtWidgets.QTextEdit(Form)
+        self.textEdit_u.setGeometry(QtCore.QRect(80, 100, 31, 20))
+        self.textEdit_u.setObjectName("textEdit_u")
+        self.label_vPos = QtWidgets.QLabel(Form)
+        self.label_vPos.setGeometry(QtCore.QRect(70, 130, 21, 16))
+        self.label_vPos.setObjectName("label_vPos")
+        self.label_w = QtWidgets.QLabel(Form)
+        self.label_w.setGeometry(QtCore.QRect(70, 160, 21, 16))
+        self.label_w.setObjectName("label_w")
+        self.label_uPos = QtWidgets.QLabel(Form)
+        self.label_uPos.setGeometry(QtCore.QRect(70, 100, 21, 16))
+        self.label_uPos.setObjectName("label_uPos")
+        self.textEdit_v = QtWidgets.QTextEdit(Form)
+        self.textEdit_v.setGeometry(QtCore.QRect(80, 130, 31, 20))
+        self.textEdit_v.setObjectName("textEdit_v")
+        self.textEdit_w = QtWidgets.QTextEdit(Form)
+        self.textEdit_w.setGeometry(QtCore.QRect(80, 160, 31, 20))
+        self.textEdit_w.setObjectName("textEdit_w")
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushButton_Init_robot.setText(_translate("Form", "Connect to Robot"))
+        self.pushButton_setPos.setText(_translate("Form", "Set Position"))
+        self.label_xPos.setText(_translate("Form", "X: "))
+        self.label_yPos.setText(_translate("Form", "Y: "))
+        self.label_zPos.setText(_translate("Form", "Z: "))
+        self.label_vPos.setText(_translate("Form", "V: "))
+        self.label_w.setText(_translate("Form", "W: "))
+        self.label_uPos.setText(_translate("Form", "U: "))
+
