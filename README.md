@@ -11,6 +11,8 @@ This project develops an intuitive human-robot interaction (HRI) system. By leve
 ## System Architecture
 The system follows a closed-loop control flow to ensure precision and safety:
 
+![flowchart](image/flowchart.jpg)
+
 1. **Vision Input**: An **Intel® RealSense™ D435** captures RGB-D data.
 2. **Pose Processing**: **MediaPipe** extracts 3D landmarks (x, y, z) of the user's arm joints.
 3. **Signal Filtering**: A **Kalman Filter** is applied to eliminate jitter caused by involuntary human movement or sensor noise.
@@ -27,6 +29,8 @@ The system utilizes infrared (IR) laser and RGB sensors to capture 3D spatial ma
 ### 2. Gesture Estimation (MediaPipe)
 The MediaPipe Pose model identifies key landmarks. We specifically focus on the **Shoulder, Elbow, and Wrist** joints to create a 3D mapping for the robot arm.
 
+![mediapipe_mark](image/mediapipe_mark.jpg)
+
 ### 3. Motion Smoothing (Kalman Filter)
 To counteract involuntary tremors and sensor noise, a discrete Kalman Filter is implemented to smooth the trajectory. The state update is governed by:
 
@@ -38,8 +42,17 @@ $$x_k = K_k \cdot z_k + (1 - K_k) \cdot x_{k-1}$$
 * $z_k$: Current measured position from sensors (Raw input)
 * $x_{k-1}$: Previous estimated position
 
+
+
+| Origin | Mapped & Filter |
+| -------- | -------- | 
+| ![kalman](image/kalman.png) | ![kalman2](image/kalman2.png) | 
+
+
+
 ### 4. Digital Twin & Safety (PyBullet)
 The **UR5/TM5** model in PyBullet acts as a safety buffer. It verifies movement within the robot's reach to prevent self-collision or singularities before physical execution.
+![pybullet](image/pybullet.png)
 
 ---
 
@@ -47,6 +60,8 @@ The **UR5/TM5** model in PyBullet acts as a safety buffer. It verifies movement 
 * **Real-time Object Grabbing**: Guide the robot arm to pick up items via natural gestures.
 * **Electric Wire Maze Game**: A high-precision test demonstrating low latency and fine-grained control.
 * **Interactive UI**: A custom-built interface for calibration, data visualization, and mode switching (Grip, Free, Start Arm).
+
+![ui](image/ui.png)
 
 ---
 
@@ -68,3 +83,12 @@ The **UR5/TM5** model in PyBullet acts as a safety buffer. It verifies movement 
 ### Installation
 ```bash
 pip install mediapipe pybullet numpy opencv-python pyrealsense2
+```
+
+### Reference
+
+[TechmanRobot Driver - GitHub](https://github.com/TechmanRobotInc)
+
+[Intel® RealSense™ Library - Github](https://github.com/realsenseai/librealsense)
+
+[Google Mediapipe](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=zh-tw)
